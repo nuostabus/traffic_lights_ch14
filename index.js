@@ -25,3 +25,13 @@ goButton.addEventListener('click', () => handler(goLight));
 stopLight.addEventListener('mouseover', () => handler(stopLight));
 cautionLight.addEventListener('mouseover', () => handler(cautionLight));
 goLight.addEventListener('mouseover', () => handler(goLight));
+
+const timerButton = document.getElementById('timer');
+
+timerButton.addEventListener('click', () => {
+  let index = 0;
+  const timer = setInterval(() => {
+    handler(allLights[index]);
+    index === 2 ? (index = 0) : (index += 1);
+  }, 1000);
+});
